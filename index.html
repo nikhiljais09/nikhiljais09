@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Selling System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Pet Selling System</h1>
+        <div class="nav">
+            <a href="#" onclick="showPage('login')">Login</a> |
+            <a href="#" onclick="showPage('signup')">Signup</a> |
+            <a href="#" onclick="showPage('pets')">Pets</a>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="page">
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <label for="email">Email:</label>
+                <input type="email" id="login-email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signup" class="page" style="display:none;">
+            <h2>Signup</h2>
+            <form onsubmit="signup(event)">
+                <label for="email">Email:</label>
+                <input type="email" id="signup-email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="signup-password" required>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+
+        <!-- Pet Listings -->
+        <div id="pets" class="page" style="display:none;">
+            <h2>Available Pets</h2>
+            <div id="pet-list"></div>
+        </div>
+
+        <!-- Order Form -->
+        <div id="order-form" class="page" style="display:none;">
+            <h2>Order Pet</h2>
+            <form onsubmit="orderPet(event)">
+                <label for="pet-id">Pet ID:</label>
+                <input type="text" id="pet-id" readonly>
+                <label for="buyer-name">Your Name:</label>
+                <input type="text" id="buyer-name" required>
+                <label for="buyer-address">Your Address:</label>
+                <textarea id="buyer-address" required></textarea>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
